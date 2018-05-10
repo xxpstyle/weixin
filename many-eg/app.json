@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/guess/guess",
+    "pages/logs/logs",
+    "pages/welcome/welcome",
+    "pages/my/my",
+    "pages/photo/photo",
+    "pages/newMusic/index",
+    "pages/take-photo/take-photo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "funny thing",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "iconPath": "image/al_first.png",
+        "selectedIconPath": "image/al_first_HL.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "image/al_happy.png",
+        "selectedIconPath": "image/al_happy_HL.png",
+        "pagePath": "pages/guess/guess",
+        "text": "开心一刻"
+      },
+      {
+        "iconPath": "image/al_user.png",
+        "selectedIconPath": "image/al_user_HL.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  }
+}

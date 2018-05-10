@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+<text>123333</text>
+  <camera>拍照</camera>
+  <button bindtap='startTakePhoto'>开始</button>
+  <button bindtap='abc'>pause</button>
+</view>

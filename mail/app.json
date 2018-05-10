@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/my/my",
+    "pages/cart/cart",
+    "pages/good/good",
+    "pages/logs/logs",
+    "pages/test/test",
+    "pages/like/like",
+    "pages/manage/address/address",
+    "pages/camera/test"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "商城",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#d81e06",
+    "borderStyle": "#2c2c2c",
+    "backgroundColor": "#ccc",
+    "list": [
+      {
+        "iconPath": "image/nav/index.png",
+        "selectedIconPath": "image/nav/index_on.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "image/nav/car.png",
+        "selectedIconPath": "image/nav/car_on.png",
+        "pagePath": "pages/cart/cart",
+        "text": "购物车"
+      },
+      {
+        "iconPath": "image/nav/my.png",
+        "selectedIconPath": "image/nav/my_on.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      },
+      {
+        "iconPath": "image/nav/car.png",
+        "selectedIconPath": "image/nav/car_on.png",
+        "pagePath": "pages/test/test",
+        "text": "开心一刻"
+      }
+    ]
+  }
+}

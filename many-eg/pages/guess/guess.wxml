@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="section">
+  <input placeholder="请输入1`100的整数" bindinput ="numValue" auto-focus/>
+  <button bindtap="start" wx:if="{{a==null||a==0}}">开始</button>
+   <block wx:else>
+   <button bindtap="guess">确定</button>
+   </block>
+   <view class="section__title">提示：{{inputValue}}</view>
+</view>
+</view>

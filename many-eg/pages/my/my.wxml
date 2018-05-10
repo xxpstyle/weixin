@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+  </view>
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  <view class="my-item" style='background:none;display:flex;flex-direction:column;height:auto;'>
+    <view>
+      余额 {{balance}} 元， 冻结 {{freeze}} 元
+    </view>
+    <view style='display:flex;padding-bottom:20rpx;'>
+      <button type='primary' style='width:100%;margin-right:70rpx;' bindtap="recharge">充值</button>
+      <button type='warn' style='width:100%;margin-right:70rpx;' bindtap="withdraw">提现</button>
+    </view>
+  </view>
+  <view class="my-item">
+    <navigator url="../photo/photo">
+     打开相册</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/pages/take-photo/take-photo">
+     模态框</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/pages/newMusic/index">
+     录音</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/pages/welcome/welcome">
+     测试设备</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/page/component/address/address">
+     电子保修卡</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/page/component/address/address">
+     设置</navigator>
+  </view>
+ 
+</view>

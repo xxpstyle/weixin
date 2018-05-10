@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<!--1px = 750/320 = 2.34rpx;-->
+<view class="container">
+  <view class="list-top">
+    <view class="label">微商城</view>
+    <view class="edit-btn" hidden="{{!btnHidden}}" bindtap="settingHidden">编辑</view>
+    <view class="edit-btn" hidden="{{btnHidden}}" bindtap="settingHidden">完成</view>
+  </view>
+  <!-- 商品信息 -->
+  <view class="goods-container">
+    <view class="goods-box" wx:for-items="{{goods.rows}}" wx:key="{{item.id}}" style="position:relative;">
+      <checkbox hidden="{{btnHidden}}" bindtap="active" data-id="{{item.id}}" checked="{{allSelect}}" style="position:absolute; left:0; top:0;"/>
+      <view class="img-box">
+        <image src="{{item.pic}}" class="image" mode="aspectFill" lazy-load="true" />
+      </view>
+      <view class="goods-title">{{item.name}}</view>
+      <view style='display:flex;'>
+        <view class="goods-price">¥ {{item.minPrice}}</view>
+        <view class="goods-price" bindtap="toDetailsTap" data-id="{{item.id}}" style="color:#FFC125;">查看详情</view>
+      </view>
+    </view>
+  </view>
+
+  <view hidden="{{loadingMoreHidden ? true : false}}" class="no-more-goods">没有更多啦</view>
+  <view class="jiesuan-box" hidden="{{btnHidden}}">
+    <view class="left-price">
+      <view class="all-selected  {{allActive?'active':''}}" bindtap="allSelect">全选</view>
+    </view>
+    <view class="to-pay-btn {{noSelect?'no-select':''}}" bindtap="del">删除（{{actives.length}}）</view>
+  </view>
+</view>

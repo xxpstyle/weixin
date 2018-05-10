@@ -1,0 +1,22 @@
+<!--pages/welcome/welcome.wxml-->
+<button bindtap="knowPhone">测试设备</button>
+<button bindtap="zhen">振动长</button>
+<button bindtap="dong">振动短</button>
+<button bindtap="address">收货地址</button>
+<button bindtap="location">获取当前位置</button>
+<text>
+当前位置：{{location}}\n
+是否截屏：{{jiePing}}\n
+手机品牌：{{phone.brand}}\n
+手机型号：{{phone.model}}\n
+设备像素比：{{phone.pixelRatio}}\n
+屏幕宽度：{{phone.screenWidth}}\n
+屏幕高度：{{phone.screenHeight}}\n
+可使用窗口宽度：{{phone.windowWidth}}\n	
+可使用窗口高度：{{phone.windowHeight}}\n	
+状态栏的高度：{{phone.statusBarHeight}}\n
+微信设置的语言：{{phone.language}}\n	
+微信版本号：{{phone.version}}\n	
+操作系统版本：{{phone.system}}\n	
+客户端平台：{{phone.platform}}\n
+</text>

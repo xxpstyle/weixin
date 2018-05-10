@@ -1,0 +1,5 @@
+<!--logs.wxml-->
+<view class="container">
+ <button bindtap='pause'>打开模态框</button>
+ <button bindtap='startTakePhoto'>打开相机</button>
+</view>

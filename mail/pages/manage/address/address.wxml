@@ -1,0 +1,65 @@
+<view wx:if="{{list.length <= 0}}">
+  <view class="container">
+    <view class="title-box" style="background:url(/../../image/icons/map_no.png) no-repeat fixed center 205rpx">
+      未设置收货地址
+    </view>
+  </view>
+</view>
+
+<view wx:else>
+
+  <view wx:for-items="{{list}}" wx:key="{{item.id}}">
+    <view class="my-item">
+      <view class="list">
+        <text>{{item.name}}</text>
+        <text>{{item.phone}}</text>
+        <view class="address">
+          <text>{{item.address}}</text>
+        </view>
+      </view>
+      <view class="btn">
+        <icon wx:if="{{item.active==2}}" type="success" bindtap='btnSelected' data-id="{{item.id}}" data-active="{{item.active}}" size="20" color="red" />
+        <image wx:else src="/image/icons/none.png" bindtap='btnSelected' data-id="{{item.id}}" data-active="{{item.active}}" />
+        <text class="btnSelected">设为默认</text>
+        <image src="/image/icons/update.png" bindtap="toUpdate" data-index="{{item}}" style="padding-right:20rpx;"/>
+        <image src="/image/icons/del.png" bindtap="del" data-id="{{item.id}}" />
+      </view>
+    </view>
+  </view>
+</view>
+<view class="jiesuan-box">
+  <button type="warn" style="width:100%" bindtap="toAdd">新增收货地址</button>
+</view>
+
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view wx:if="{{isUpdate}}" class="modal-title">修改收货地址</view>
+  <view wx:else class="modal-title">新增收货地址</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input type="text" bindinput="name" value="{{name}}" minlength="2" maxlength="10" class="input" placeholder="请输入姓名"></input>
+    </view>
+    <view class="modal-input">
+      <input type="number" bindinput="phone" value="{{phone}}" minlength="11" maxlength="11" class="input" placeholder="请输入手机号"></input>
+    </view>
+    <view bindtap="bingAddressTap">
+      <button style="padding-bottom:20rpx;">选择收货地址</button>
+      <view class="info">
+        <textarea wx:if="{{ADDRESS_1_STR!=null&&ADDRESS_1_STR!=''}}" disabled="true" auto-height="true" bindinput="address" value="{{ADDRESS_1_STR}}" />
+        <textarea wx:else disabled="true" auto-height="true" bindinput="address" value="{{address}}" />
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{isUpdate}}">
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="update" data-status="confirm">修改</view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="add" data-status="confirm">保存</view>
+    </view>
+  </view>
+</view>

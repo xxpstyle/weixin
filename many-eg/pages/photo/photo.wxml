@@ -1,0 +1,9 @@
+<!--logs.wxml-->
+<view class="container">
+ <button bindtap='openImages'>打开相册</button>
+<image src="{{source}}"></image>
+
+<button style="margin:30rpx;" bindtap="chooseimage">获取图片</button>
+<image src="{{tempFilePaths }}" catchTap="chooseImageTap" mode="aspectFit" style="width: 100%;"/>
+
+</view>

@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+    <image wx:if="{{userInfo && userInfo.gender==1}}" class="sex-avatar" src="/image/nav/boy.png"></image>
+    <image wx:if="{{userInfo && userInfo.gender==2}}" class="sex-avatar" src="/image/nav/girl.png"></image>
+    <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+  </view>
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  <view class="my-item" style='background:none;display:flex;flex-direction:column;height:auto;'>
+    <view>
+      余额 {{balance}} 元， 冻结 {{freeze}} 元
+    </view>
+    <view style='display:flex;padding-bottom:20rpx;'>
+      <button type='primary' style='width:100%;margin-right:70rpx;' bindtap="recharge">充值</button>
+      <button type='warn' style='width:100%;margin-right:70rpx;' bindtap="withdraw">提现</button>
+    </view>
+  </view>
+  <view class="my-item">
+    <navigator url="../manage/address/address">
+      <image src="/image/icons/map.png" />收获地址管理</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/pages/like/like">
+      <image src="/image/icons/collect.png" />我的收藏</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/page/component/address/address">
+      <image src="/image/icons/cheap.png" />我的优惠券</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/page/component/address/address">
+      <image src="/image/icons/keep_new.png" />售后维修</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/page/component/address/address">
+      <image src="/image/icons/card.png" />电子保修卡</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/page/component/address/address">
+      <image src="/image/icons/setting.png" />设置</navigator>
+  </view>
+  <view class="phone" bindtap="toPhone">
+    <image src="/image/icons/phone.png" />客服电话: 15270743950
+    <text style="font-size:30rpx;padding-left: 100rpx;">\n 服务时间：9:30~21:00</text>
+  </view>
+</view>

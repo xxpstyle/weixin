@@ -1,0 +1,50 @@
+<view wx:if="{{cart.length <= 0}}">
+  <view class="title-box">
+    购物车空空如也～
+  </view>
+  <view class="container">
+    <view class="to-index-btn">
+      <navigator url="../index/index" open-type="switchTab" hover-class="other-navigator-hover">去逛逛</navigator>
+    </view>
+  </view>
+</view>
+
+<view wx:else>
+  <view class="list-top">
+    <view class="label">微商城</view>
+    <view class="edit-btn" hidden="{{btnHidden}}" bindtap="settingHidden">编辑</view>
+    <view class="edit-btn" hidden="{{!btnHidden}}" bindtap="settingHidden">完成</view>
+  </view>
+  <view class="goodsList">
+    <view class="a-gooods" wx:for="{{cart}}" wx:key="{{index}}">
+      <view class="a-goods-conts {{item.active? 'active':''}}" bindtap="selectTap" bindtouchmove="touchM" data-index="{{index}}" style="{{item.left}}">
+        <view class="goods-info">
+          <view class="img-box">
+            <image src="{{item.good.pic}}" class="img" />
+          </view>
+          <view class="text-box">
+            <view class="goods-title">{{item.good.name}}</view>
+            <view class="goods-label">{{item.label}}</view>
+            <view class="goods-price">¥ {{item.good.minPrice}}</view>
+            <view class="buy-num">
+              <view class="jian-btn {{item.count==1? 'disabled' : ''}}" catchtap="minusCount" data-index="{{index}}">-</view>
+              <input type="number" value="{{item.count}}" disabled/>
+              <view class="jia-btn {{item.count==10? 'disabled' : ''}}" catchtap="addCount" data-index="{{index}}">+</view>
+            </view>
+          </view>
+        </view>
+        <view class="delete-btn" data-index="{{index}}" catchtap="delItem">
+          删除
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="jiesuan-box">
+    <view class="left-price">
+      <view class="all-selected  {{allActive?'active':''}}" bindtap="allSelect">全选</view>
+      <view class="total" hidden="{{noSelect}}">合计：¥ {{totalPrice}}</view>
+    </view>
+    <view class="to-pay-btn {{noSelect?'no-select':''}}" hidden="{{btnHidden}}" bindtap="toPayOrder">去结算（{{selectedCount}}）</view>
+    <view class="to-pay-btn {{noSelect?'no-select':''}}" hidden="{{!btnHidden}}" bindtap="delCart">删除（{{selectedCount}}）</view>
+  </view>
+</view>
